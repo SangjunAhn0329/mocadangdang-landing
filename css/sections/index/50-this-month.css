@@ -1,0 +1,56 @@
+.this-month {
+  padding-block: var(--section-padding);
+  background: var(--color-dark);
+}
+.this-month__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+.this-month__text,
+.this-month__media {
+  min-width: 0;
+}
+.this-month__label {
+  margin: 0 0 var(--space-3);
+  font-size: var(--fs-label);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-label);
+  text-transform: uppercase;
+  line-height: 1.4;
+  color: var(--color-on-dark-muted);
+}
+.this-month__title {
+  margin: 0 0 var(--space-5);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading);
+  color: var(--color-on-dark);
+}
+.this-month__desc {
+  margin: 0;
+  font-size: var(--fs-body-lg);
+  line-height: 1.75;
+  color: var(--color-on-dark-muted);
+}
+/* 포스터: 자르기·고정 높이 금지, 전체 노출 */
+.this-month__media img {
+  display: block;
+  width: 100%;
+  max-width: var(--img-poster-max, 350px);
+  height: auto;
+  object-fit: contain;
+  margin-inline: auto;
+  border-radius: var(--radius-lg);
+}
+
+@media (min-width: 1024px) {
+  .this-month__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+  .this-month__media img {
+    max-width: 480px;
+  }
+}
